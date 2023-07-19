@@ -14,7 +14,7 @@ $valueName = "GraphicsSettings_Model_h2986158309"
 # Check if the registry value exists
 if (-not (Test-Path -Path "$registryPath\$valueName")) {
     # If the value doesn't exist, create a new default value with the null terminator (0x00)
-    $defaultValue = '{"FPS":120,"EnableVSync":false,"RenderScale":2.0,"ResolutionQuality":5,"ShadowQuality":5,"LightQuality":5,"CharacterQuality":5,"EnvDetailQuality":5,"ReflectionQuality":5,"BloomQuality":5,"AAMode":1}' + [char]0x00
+    $defaultValue = '{"FPS":120,"EnableVSync":false,"RenderScale":1.0,"ResolutionQuality":5,"ShadowQuality":5,"LightQuality":5,"CharacterQuality":5,"EnvDetailQuality":5,"ReflectionQuality":5,"BloomQuality":5,"AAMode":1}' + [char]0x00
     $defaultBinValue = [System.Text.Encoding]::UTF8.GetBytes($defaultValue)
     Set-ItemProperty -Path $registryPath -Name $valueName -Value $defaultBinValue
 }
